@@ -1,0 +1,26 @@
+services:
+  angular-app:
+    container_name: angular-app
+    build:
+      context: .
+      dockerfile: prod.Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    restart: always
+    ports:
+      - 80:80
+
+  aspnetserver:
+    image: matjpdh/ll-aspnet-server:latest
+    restart: always    
+    ports:
+      - 7094:7094
+
+  db:
+    image: matjpdh/lldb:1.0
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: password

@@ -1,0 +1,14 @@
+<div class="p-2 flex justify-center">
+    <img class="items-center"
+        src="data:image/avif;base64,{{book.cover_image}}"
+        width="242"
+        height="363"
+        alt={{book.title}}
+    />
+</div>
+<div class="p-2 text-center">{{book.title}}</div>
+<div class="p-2 text-center">{{book.author}}</div>
+<div class="p-2 flex justify-center">
+    <button name="submit" aria-label="submit" type="button" (click)="updateBook(buttonAction,book.title)" [disabled]="buttonAction==='Borrow' && book.borrowed"
+      class="bg-blue-500 hover:bg-blue-700 disabled:bg-gray-500 text-white font-bold py-2 px-4 rounded items-center">{{buttonAction}}</button>
+</div>

@@ -1,0 +1,15 @@
+<div class="font-league font-bold flex bg-gray-700 justify-around uppercase text-white text-xl text-shadow text-right">
+    <p class="flex p-8">
+        LENDING LIBRARY
+    </p>
+    <nav>
+        <ul class="flex self-center p-8">
+            <li class="px-4 no-underline hover:underline hover:decoration-4"><a [routerLink]="['/books', 0]" routerLinkActive="active" ariaCurrentWhenActive="page">HOME</a></li>
+            <li>•</li>
+            <li class="px-4 no-underline hover:underline hover:decoration-4"><a [routerLink]="['/books', 1]" routerLinkActive="active" ariaCurrentWhenActive="page">MY BOOKS</a></li>
+            <li>•</li>
+            <li class="px-4 no-underline hover:underline hover:decoration-4"><a [routerLink]="['/about']" routerLinkActive="active" ariaCurrentWhenActive="page">ABOUT</a></li>
+        </ul>
+    </nav>
+</div>
+<router-outlet></router-outlet>
